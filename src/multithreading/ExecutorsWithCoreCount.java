@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 public class ExecutorsWithCoreCount {
     public static void main(String[] args) {
         //get count of available cores
-        int coreCount = Runtime.getRuntime().availableProcessors();
+        int coreCount = Runtime.getRuntime().availableProcessors(); //ideal pool size
         ExecutorService service = Executors.newFixedThreadPool(coreCount);
 
         //submit tasks for execution

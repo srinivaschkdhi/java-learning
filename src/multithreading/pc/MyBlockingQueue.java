@@ -21,7 +21,7 @@ public class MyBlockingQueue<E> {
     public void put(E e) throws InterruptedException {
         lock.lock();
         try {
-            if (queue.size() == max)
+            if (queue.size() == max)//change it to while Spurious wakeups
                 notFull.await();  // wait until some one says it is not full
 
             queue.add(e);
